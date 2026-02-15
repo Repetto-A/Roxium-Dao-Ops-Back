@@ -8,7 +8,13 @@ export default defineConfig(({ mode }) => {
   });
 
   const additionalViteConfig: UserConfig = {
-    // add your own vite config here
+    server: {
+      allowedHosts: [
+        'roxium-dao-ops-back-production.up.railway.app',
+        'localhost',
+        '.railway.app', // Allow all Railway domains
+      ],
+    },
   };
 
   const config = mergeConfig(baseConnectViteConfig, additionalViteConfig);
