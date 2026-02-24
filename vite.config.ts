@@ -9,6 +9,16 @@ export default defineConfig(({ mode }) => {
 
   const additionalViteConfig: UserConfig = {
     server: {
+      host: true,
+      allowedHosts: [
+        'back-staging-8bb8.up.railway.app',
+        'roxium-dao-ops-back-production.up.railway.app',
+        'localhost',
+        '.railway.app', // Allow all Railway domains
+      ],
+    },
+    preview: {
+      host: true,
       allowedHosts: [
         'back-staging-8bb8.up.railway.app',
         'roxium-dao-ops-back-production.up.railway.app',
